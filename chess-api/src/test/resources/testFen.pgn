@@ -1,0 +1,10 @@
+[Event "Test"]
+[Site "localhost"]
+[Date "??"]
+[Round "1"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"]
+2... Nc6 3. Ng1 {Bad move} *
