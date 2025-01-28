@@ -1,0 +1,11 @@
+<h1>Save game</h1>
+<form [formGroup]="formGroup">
+  <div class="form-group">
+    <label for="saveGame.filename">Filename</label>
+    <input id="saveGame.filename" formControlName="filename" type="text">
+  </div>
+  <div class="button-list">
+    <button type="button" (click)="download()" class="button">Download</button>
+    <button type="button" (click)="cancel()" class="button">Cancel</button>
+  </div>
+</form>

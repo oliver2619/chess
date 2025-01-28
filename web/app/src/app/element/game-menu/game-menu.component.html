@@ -1,0 +1,5 @@
+<button type="button" (click)="restart()" [disabled]="!canStartNew()">New</button>
+<button type="button" (click)="load()" [disabled]="!canStartNew()">Load</button>
+<button type="button" (click)="importPgn()" [disabled]="!canStartNew()">Import PGN</button>
+<button type="button" (click)="resume()" [disabled]="!canResume()">Resume</button>
+<button type="button" (click)="save()" [disabled]="!canSave()">Save</button>

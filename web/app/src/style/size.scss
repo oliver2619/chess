@@ -1,0 +1,13 @@
+@use "sass:math";
+
+@function spacing($amount) {
+  @return math.pow(2, $amount * 0.5);
+}
+
+$xxs: spacing(-3) * 1em;
+$xs: spacing(-2) * 1em;
+$s: spacing(-1) * 1em;
+$m: spacing(0) * 1em;
+$l: spacing(1) * 1em;
+$xl: spacing(2) * 1em;
+$xxl: spacing(3) * 1em;

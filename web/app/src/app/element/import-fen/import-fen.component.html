@@ -1,0 +1,12 @@
+<h1>Import FEN</h1>
+<form [formGroup]="formGroup">
+  <div class="form-group">
+    <label for="importFen.fen">FEN</label>
+    <input id="importFen.fen" type="text" formControlName="fen" spellcheck="false" autocomplete="none">
+  </div>
+</form>
+<div class="button-list">
+  <button (click)="upload()" type="button" class="button">Upload</button>
+  <button (click)="ok()" type="button" [disabled]="!canOk" class="button">OK</button>
+  <button (click)="cancel()" type="button" class="button">Cancel</button>
+</div>

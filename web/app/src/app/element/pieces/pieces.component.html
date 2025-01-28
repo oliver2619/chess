@@ -1,0 +1,10 @@
+<div class="figures">
+  @for(f of white(); track f.imgTitle) {
+    <img (click)="onSelect(f)" src="/figures/{{f.imgTitle}}.svg" [ngClass]="{selected: f.imgTitle == selected()?.imgTitle}">
+  }
+</div>
+<div class="figures">
+  @for(f of black(); track f.imgTitle) {
+    <img (click)="onSelect(f)" src="/figures/{{f.imgTitle}}.svg" [ngClass]="{selected: f.imgTitle == selected()?.imgTitle}">
+  }
+</div>

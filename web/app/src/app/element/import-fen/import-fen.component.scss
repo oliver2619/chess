@@ -1,0 +1,5 @@
+@use "../../../style/dialog";
+
+:host {
+  @include dialog.content();
+}

@@ -1,0 +1,16 @@
+@use "sass:math";
+
+$font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, sans-serif;
+
+@mixin default($size) {
+  font-family: $font-family;
+  font-weight: normal;
+
+  @media screen and (max-width: 399px) {
+    font-size: math.pow(2, $size * 0.333) * 5vw;
+  }
+
+  @media screen and (min-width: 400px) {
+    font-size: math.pow(2, $size * 0.333) * 20px;
+  }
+}

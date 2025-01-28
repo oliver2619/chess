@@ -1,0 +1,11 @@
+@if(editEnabled()) {
+  <button type="button" (click)="edit()">Edit</button>
+}
+@if(editActionsEnabled()) {
+  <button type="button" (click)="removeFigure()" [disabled]="!removeFigureEnabled()">Remove figure</button>
+  <button type="button" (click)="reset()">Reset</button>
+  <button type="button" (click)="clear()">Clear</button>
+  <button type="button" (click)="importFen()">Import FEN</button>
+}
+<button type="button" (click)="exportFen()">Export FEN</button>
+<button type="button" (click)="flip()" [ngClass]="{active: flipped()}">Flip</button>

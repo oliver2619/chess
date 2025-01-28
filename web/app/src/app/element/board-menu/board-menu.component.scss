@@ -1,0 +1,5 @@
+@use "../../../style/button";
+
+:host {
+  @include button.list();
+}

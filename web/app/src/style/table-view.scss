@@ -1,0 +1,27 @@
+@use "./color";
+@use "./size";
+
+@mixin frame {
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  padding: size.$m;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: size.$m;
+
+  table {
+    border-collapse: collapse;
+
+    td, th {
+      border-bottom: 1px solid color.default(5);
+      padding: size.$xxs;
+      text-align: start;
+
+      &.right {
+        text-align: end;
+      }
+    }
+  }
+}

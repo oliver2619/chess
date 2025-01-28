@@ -1,0 +1,9 @@
+@if(canResign()) {
+  <button type="button" (click)="abort()">Resign</button>
+}
+@if(canAbort()) {
+  <button type="button" (click)="abort()">Abort</button>
+}
+@if(canOfferDraw()) {
+  <button type="button" (click)="offerDraw()">Offer draw</button>
+}

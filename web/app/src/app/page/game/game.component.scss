@@ -1,0 +1,6 @@
+@use "../../../style/part";
+
+:host {
+  @include part.horizontal;
+  @include part.grow;
+}

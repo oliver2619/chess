@@ -1,0 +1,18 @@
+<div class="button-list">
+  <button type="button" [disabled]="!canUndo()" (click)="onUndo()">Undo</button>
+  <button type="button" (click)="onExport()">Export</button>
+</div>
+<table>
+  <tr>
+    <th>Move</th>
+    <th>White</th>
+    <th>Black</th>
+  </tr>
+  @for(e of entries(); track e.index) {
+    <tr>
+      <td class="right">{{e.index}}</td>
+      <td>{{e.white}}</td>
+      <td>{{e.black}}</td>
+    </tr>
+  }
+</table>

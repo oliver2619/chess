@@ -1,0 +1,38 @@
+@use './color';
+@use './size';
+@use './z-index';
+
+@mixin frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .dialog-backpane {
+    z-index: z-index.$dialog-backpane;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(white, 0.5);
+  }
+}
+
+@mixin content {
+  z-index: z-index.$dialog-content;
+  position: relative;
+  border: 1px solid black;
+  border-radius: size.$l;
+  padding: size.$l;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: size.$m;
+  background-color: color.$background-default;
+}

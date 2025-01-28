@@ -1,0 +1,5 @@
+@use "../../../style/menu";
+
+:host {
+  @include menu.popup-menu;
+}

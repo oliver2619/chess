@@ -1,0 +1,67 @@
+@mixin grow {
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-self: stretch;
+}
+
+@mixin common {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  &.grow {
+    @include grow();
+  }
+}
+
+@mixin horizontal {
+  flex-direction: row;
+  @include common();
+
+  &.left {
+    justify-content: flex-start;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+}
+
+@mixin vertical {
+  flex-direction: column;
+  @include common();
+
+  &.top {
+    justify-content: flex-start;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+}
+
+.parts.horizontal {
+  @include horizontal();
+}
+
+.parts.vertical {
+  @include vertical();
+}
+
+.part {
+  &.center {
+    align-self: center;
+  }
+
+  &.stretch {
+    align-self: stretch;
+  }
+
+  &.left {
+    align-self: flex-start;
+  }
+
+  &.right {
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,41 @@
+@use "./color";
+@use "./font";
+@use "./opacity";
+@use "./size";
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: size.$m;
+
+  .form-group {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+input[type=text], input[type=number], textarea {
+  align-self: stretch;
+  outline: none;
+  border: 1px solid black;
+  border-radius: size.$xxs;
+  padding: size.$xxs;
+  color: color.button(2);
+  @include font.default(0);
+
+  &[readonly] {
+    color: color.default(2);
+  }
+
+  &[disabled] {
+    opacity: opacity.$disabled;
+  }
+
+  &:focus:not([readonly]) {
+    outline: 1px solid color.button(3);
+    border-color: color.button(3);
+  }
+}

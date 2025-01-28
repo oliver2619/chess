@@ -1,0 +1,13 @@
+<h1>Resume from PGN</h1>
+<table>
+  @for(game of games(); track i; let i = $index) {
+    <tr>
+      <td>{{game.title}} ({{game.white}} - {{game.black}})</td>
+      <td><button type="button" class="button" (click)="resume(i)">Resume</button></td>
+    </tr>
+  }
+</table>
+<div class="button-list">
+  <button type="button" class="button" (click)="upload()">Upload PGN</button>
+  <button type="button" class="button" (click)="cancel()">Cancel</button>
+</div>

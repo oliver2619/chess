@@ -1,0 +1,27 @@
+@use "../../../style/color";
+@use "../../../style/size";
+
+:host {
+  flex-grow: 1;
+  width: 45 * 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: size.$m;
+  background-color: color.button(5);
+}
+
+.figures {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: wrap;
+
+  img {
+    border-radius: size.$xxs;
+
+    &.selected {
+      background-color: color.button(4);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use "sass:color";
+@use "sass:math";
+
+$background-default: white;
+
+$default-base: #808080;
+$button-base: #0f8cef;
+
+@function default($b) {
+  @return color.change($color: $default-base, $lightness: math.div($b, 6) * 100%);
+}
+
+@function button($b) {
+  @return color.change($color: $button-base, $lightness: math.div($b, 6) * 100%);
+}

@@ -1,0 +1,22 @@
+@use "style/button";
+@use "style/color";
+@use "style/font";
+@use "style/form";
+@use "style/part";
+@use "style/svg";
+@use "style/text";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  background-color: color.$background-default;
+  @include font.default(0);
+}

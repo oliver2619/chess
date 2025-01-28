@@ -1,0 +1,16 @@
+@use "./font";
+
+h1 {
+  margin: 0;
+  @include font.default(3);
+}
+
+h2 {
+  margin: 0;
+  @include font.default(2);
+}
+
+h3 {
+  margin: 0;
+  @include font.default(1);
+}

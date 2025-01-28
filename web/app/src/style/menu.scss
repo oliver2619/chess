@@ -1,0 +1,52 @@
+@use "./z-index";
+@use "./font";
+
+@mixin menu-item {
+  outline: none;
+  border: none;
+  @include font.default(0);
+}
+
+@mixin menu-bar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  button {
+    @include menu-item;
+  }
+}
+
+@mixin menu-bar {
+  justify-content: space-between;
+  @include menu-bar-container;
+}
+
+@mixin menu-bar-group {
+  @include menu-bar-container;
+}
+
+@mixin popup-menu {
+  position: absolute;
+  z-index: z-index.$popup-menu;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: white;
+
+  button {
+    @include menu-item;
+  }
+}
+
+@mixin popup-menu-group {
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.popup-menu-group {
+  @include popup-menu-group;
+}

@@ -1,0 +1,20 @@
+<h1>Export FEN</h1>
+<form [formGroup]="formGroup">
+  <div class="form-group">
+    <label for="exportFen.nextMoveIndex">Next move index</label>
+    <input id="exportFen.nextMoveIndex" type="number" formControlName="nextMoveIndex" min="1" max="999">
+  </div>
+  <div class="form-group">
+    <label for="exportFen.fen">FEN</label>
+    <input id="exportFen.fen" type="text" [value]="fen()" readonly="readonly" size="50">
+  </div>
+  <div class="form-group">
+    <label for="exportFen.filename">Filename</label>
+    <input id="exportFen.filename" type="text" formControlName="filename" spellcheck="false" autocomplete="none">
+  </div>
+</form>
+<div class="button-list">
+  <button (click)="copy()" type="button" class="button">Copy</button>
+  <button (click)="download()" type="button" class="button">Download</button>
+  <button (click)="close()" type="button" class="button">Close</button>
+</div>

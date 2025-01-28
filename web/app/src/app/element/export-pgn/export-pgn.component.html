@@ -1,0 +1,20 @@
+<h1>Export PGN</h1>
+<form [formGroup]="formGroup">
+<!--  <div class="form-group">-->
+<!--    <label for="exportFen.nextMoveIndex">Next move index</label>-->
+<!--    <input id="exportFen.nextMoveIndex" type="number" formControlName="nextMoveIndex" min="1" max="999">-->
+<!--  </div>-->
+  <div class="form-group">
+    <label for="exportPgn.pgn">PGN</label>
+    <textarea id="exportPgn.pgn" [value]="pgn()" readonly="readonly" rows="10" spellcheck="false"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exportPgn.filename">Filename</label>
+    <input id="exportPgn.filename" type="text" formControlName="filename" spellcheck="false" autocomplete="none">
+  </div>
+</form>
+<div class="button-list">
+  <button (click)="copy()" type="button" class="button">Copy</button>
+  <button (click)="download()" type="button" class="button">Download</button>
+  <button (click)="close()" type="button" class="button">Close</button>
+</div>

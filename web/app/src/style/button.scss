@@ -1,0 +1,80 @@
+@use "./color";
+@use "./font";
+@use "./opacity";
+@use "./size";
+
+@mixin default {
+  outline-style: none;
+  outline-width: 2px;
+  border: none;
+  border-radius: size.$xxs;
+  padding: size.$xs;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  background-color: color.button(3);
+  @include font.default(0);
+
+  &.small {
+    padding: size.$xxs;
+    @include font.default(-1);
+  }
+
+  &:focus,  {
+    outline-style: solid;
+    outline-color: color.button(2);
+  }
+
+  &.active, &:active {
+    &:not([disabled]) {
+      outline-style: solid;
+      outline-color: color.button(1);
+      background-color: color.button(2);
+    }
+  }
+
+  &[disabled] {
+    opacity: opacity.$disabled;
+  }
+}
+
+@mixin list {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  column-gap: size.$m;
+
+  button {
+    @include default();
+  }
+}
+
+button.button {
+  @include default();
+}
+
+.button-list {
+  @include list();
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  column-gap: 2px;
+
+  button {
+    @include default();
+
+    &:nth-child(n + 2) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:nth-last-child(n + 2) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Move</th>
+    <th>Rating</th>
+    <th>Name</th>
+  </tr>
+  @if(backEnabled()) {
+    <tr>
+      <td colspan="3">
+        <button type="button" (click)="onBack()" class="button small">Back</button>
+      </td>
+    </tr>
+  }
+  @for (e of entries(); track i; let i = $index) {
+    <tr>
+      <td>
+        <button type="button" (click)="onMove(i)" class="button small">{{ e.move }}</button>
+      </td>
+      <td class="right">{{ e.rating | number:'0.0-2'}}</td>
+      <td>{{ e.name }}</td>
+    </tr>
+  }
+</table>

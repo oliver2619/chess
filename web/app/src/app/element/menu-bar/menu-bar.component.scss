@@ -1,0 +1,9 @@
+@use '../../../style/menu';
+
+:host {
+  @include menu.menu-bar;
+}
+
+div {
+  @include menu.menu-bar-group;
+}

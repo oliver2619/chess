@@ -1,0 +1,37 @@
+<h1>Resume game</h1>
+<form>
+  <div class="form-group">
+    <label>Color on turn</label>
+    <div class="button-group">
+      <button type="button" [disabled]="!whiteEnabled()" (click)="setColorOnTurn(0)" [cButtonActive]="colorOnTurn() == 0">White</button>
+      <button type="button" [disabled]="!blackEnabled()" (click)="setColorOnTurn(1)" [cButtonActive]="colorOnTurn() == 1">Black</button>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Castling</label>
+    <div class="button-group">
+      <button type="button" [disabled]="!castlingWhiteQueenEnabled()" (click)="castlingWhiteQueen.set(!castlingWhiteQueen())" [cButtonActive]="castlingWhiteQueen()">White queen's side</button>
+      <button type="button" [disabled]="!castlingWhiteKingEnabled()" (click)="castlingWhiteKing.set(!castlingWhiteKing())" [cButtonActive]="castlingWhiteKing()">White king's side</button>
+      <button type="button" [disabled]="!castlingBlackQueenEnabled()" (click)="castlingBlackQueen.set(!castlingBlackQueen())" [cButtonActive]="castlingBlackQueen()">Black queen's side</button>
+      <button type="button" [disabled]="!castlingBlackKingEnabled()" (click)="castlingBlackKing.set(!castlingBlackKing())" [cButtonActive]="castlingBlackKing()">Black king's side</button>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>En passant</label>
+    <div class="button-group">
+      <button type="button" (click)="enPassant.set(-1)" [cButtonActive]="enPassant() < 0">-</button>
+      <button type="button" [disabled]="!enPassantEnabled()[0]" (click)="enPassant.set(0)" [cButtonActive]="enPassant() == 0">A</button>
+      <button type="button" [disabled]="!enPassantEnabled()[1]" (click)="enPassant.set(1)" [cButtonActive]="enPassant() == 1">B</button>
+      <button type="button" [disabled]="!enPassantEnabled()[2]" (click)="enPassant.set(2)" [cButtonActive]="enPassant() == 2">C</button>
+      <button type="button" [disabled]="!enPassantEnabled()[3]" (click)="enPassant.set(3)" [cButtonActive]="enPassant() == 3">D</button>
+      <button type="button" [disabled]="!enPassantEnabled()[4]" (click)="enPassant.set(4)" [cButtonActive]="enPassant() == 4">E</button>
+      <button type="button" [disabled]="!enPassantEnabled()[5]" (click)="enPassant.set(5)" [cButtonActive]="enPassant() == 5">F</button>
+      <button type="button" [disabled]="!enPassantEnabled()[6]" (click)="enPassant.set(6)" [cButtonActive]="enPassant() == 6">G</button>
+      <button type="button" [disabled]="!enPassantEnabled()[7]" (click)="enPassant.set(7)" [cButtonActive]="enPassant() == 7">H</button>
+    </div>
+  </div>
+  <div class="button-list">
+    <button type="button" (click)="resume()" class="button">Resume</button>
+    <button type="button" (click)="cancel()" class="button">Cancel</button>
+  </div>
+</form>

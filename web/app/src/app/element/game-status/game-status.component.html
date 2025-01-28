@@ -1,0 +1,22 @@
+@if(canAcceptDraw()) {
+  <div>The opponent offered a draw.</div>
+  <button type="button" (click)="acceptDraw()">Accept draw</button>
+}
+@if(isGameOver()) {
+  <div>
+    <span>Game over:&nbsp;</span>
+    @if(isRemis()) {
+      @if(endingNegotiatedByPlayers()) {
+        <span>Players negotiated remis.</span>
+      } @else {
+        <span>Stealmate.</span>
+      }
+    } @else {
+      @if(endingNegotiatedByPlayers()) {
+        <span>{{looser()}} has resigned, {{winner()}} wins.</span>
+      } @else {
+        <span>{{looser()}} is checkmated, {{winner()}} wins.</span>
+      }
+    }
+  </div>
+}

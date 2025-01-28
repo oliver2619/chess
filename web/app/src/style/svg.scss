@@ -1,0 +1,19 @@
+@use './color';
+@use './font';
+@use './size';
+
+svg {
+  user-select: none;
+
+  rect.selection{
+    rx: size.$xxs;
+    ry: size.$xxs;
+    fill: color.button(4);
+    stroke: none;
+  }
+
+  text {
+    font-family: font.$font-family;
+  }
+
+}

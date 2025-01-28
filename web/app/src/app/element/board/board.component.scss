@@ -1,0 +1,13 @@
+@use "../../../style/size";
+
+:host {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: size.$m;
+}
+
+svg {
+  border: 1px solid #808080;
+}

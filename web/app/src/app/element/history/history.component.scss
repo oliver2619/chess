@@ -1,0 +1,5 @@
+@use "../../../style/table-view";
+
+:host {
+  @include table-view.frame();
+}

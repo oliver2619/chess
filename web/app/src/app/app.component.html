@@ -1,0 +1,7 @@
+<c-menu-bar></c-menu-bar>
+<router-outlet/>
+@if (dialogVisible()) {
+  <c-dialog-frame>
+    <ng-container *ngComponentOutlet="dialogComponent()"></ng-container>
+  </c-dialog-frame>
+}
